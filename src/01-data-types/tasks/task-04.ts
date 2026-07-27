@@ -10,3 +10,42 @@
  * 
  * display the book data using console.log.
  */
+
+type Book = {
+    ISBN: number;
+    title: string;
+    author: string;
+    totalPages: number;
+    category: string;
+    isAvailable: boolean;
+
+}
+const book1 = {
+    ISBN: 978,
+    title: "Bumi",
+    author: "Tia Bestari",
+    totalPages: 181,
+    category: "Novel",
+    isAvailable: true,
+};
+
+const book2 = {
+    ISBN: 786,
+    title: "3728 mdpl",
+    author: "Gerry Pratama",
+    totalPages: 321,
+    category: "Novel",
+    isAvailable: false,
+};
+
+const book3 = {
+    ISBN: 537,
+    title: "Bumi",
+    author: "Syifa Hadju",
+    totalPages: 765,
+    category: "Novel",
+    isAvailable: true,
+};    
+
+console.log("Data Book");
+console.log({book1, book2, book3});

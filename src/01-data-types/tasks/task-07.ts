@@ -11,3 +11,23 @@
  * 
  * display the registration data using console.log.
  */
+
+type Registration = {
+studentID: number,
+fullname: string,
+gradeLevel: string,
+courseID: number,
+courseTitle: string,
+instructorName: string,
+totalLearningHours: number,
+registrationDate: string,
+isPaymentCompleted: boolean,
+}
+
+consrt registration1: Registration = {
+studentID: 54321,
+fullname: "Afra Haura A.R",
+gradeLevel: "11th Grade",
+courseID: 222,
+
+
