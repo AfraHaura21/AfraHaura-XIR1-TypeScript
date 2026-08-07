@@ -46,5 +46,9 @@ const product3: Product = {
   averageCustomerRating: 4.8,
   isDiscounted: false,
 };
+
+
+
 console.log("Data Product");
 console.log({ product1, product2, product3 });
+    

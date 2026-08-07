@@ -15,14 +15,16 @@
 
  */
 
-const finalScore = 82;
-const attendance = 94;
-const tuitionPaid = true;
+const finalScore:number = 60;
+const attendance:number = 94;
+const tuitionPaid:boolean = true;
 
 const isEligible =
   finalScore >= 75 &&
   attendance >= 90 &&
   tuitionPaid;
+
+
   
-console.log(isEligible);
+console.log("Eligible : " + (isEligible ? "Eligible" : "Not Eligible"));
 

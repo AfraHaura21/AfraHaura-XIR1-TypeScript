@@ -15,17 +15,19 @@
  * 2. Display the calculation results.
  */
 
-const friedricePrice = 18000;
-const friedriceQty = 3;
-const MineralWaterPrice = 5000;
-const MineralWaterQty = 2;
+const friedricePrice:number = 18000;
+const friedriceQty:number = 3;
+const MineralWaterPrice:number = 5000;
+const MineralWaterQty:number = 2;
+const discount:number = 10000;
+const StudentOSIS: boolean = true;
+const DiscountOsis = StudentOSIS ? 10000 : 0;
 
-const discount = 10000;
 
 const TotalFoodPrice = friedricePrice * friedriceQty;
 const TotalDrinkPrice = MineralWaterPrice * MineralWaterQty;
 const Total = TotalFoodPrice + TotalDrinkPrice   
-const Final= Total - discount ;
+const Final= Total - DiscountOsis ;
 
 console.log ("Cafeteria Receipt");
 console.log("Total Food Price: Rp" + TotalFoodPrice);
@@ -33,3 +35,4 @@ console.log("Total Drink Price: Rp" + TotalDrinkPrice);
 console.log("Total: Rp"+ Total)
 console.log("Discount: Rp" + discount);
 console.log("Final Payment: Rp" + Final);
+  

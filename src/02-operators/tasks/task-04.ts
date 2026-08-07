@@ -22,13 +22,13 @@
  *  - Calculate the final payment.
  */
 
-const KeyboardPrice = 850000
-const KeyboardQty = 1
-const WirelessMousePrice = 275000
-const WirelessMouseQty = 2
-const MousePadPrice =  120000
-const MousePadQty = 1
-const isPremium = true;
+const KeyboardPrice:number = 850000
+const KeyboardQty:number = 1
+const WirelessMousePrice:number = 275000
+const WirelessMouseQty:number = 2
+const MousePadPrice:number =  120000
+const MousePadQty:number = 1
+const isPremium:boolean  = true;
 
 const subtotal = ( KeyboardPrice * KeyboardQty + WirelessMousePrice * WirelessMouseQty + MousePadPrice * MousePadQty);
 
@@ -39,7 +39,7 @@ totalItems++;
 totalItems++;
 
 let discount = 0;
-if (subtotal > 1000000) {
+if (subtotal > 1000000) {   
   discount = subtotal * 0.1;
 }
 

@@ -17,10 +17,10 @@
  * - Bonus
  * - Final salary
  */
-const employeeName = "Dimas";
-const basicSalary = 5000000;
-const overtimeHours = 12;
-const overtimeRate = 50000;
+const employeeName:string = "Dimas";
+const basicSalary:number = 5000000;
+const overtimeHours:number = 12;
+const overtimeRate:number = 50000;
 const overtimePay = overtimeHours * overtimeRate;
 let bonus = 0;
 
