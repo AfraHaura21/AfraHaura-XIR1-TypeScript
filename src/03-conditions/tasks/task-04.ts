@@ -39,8 +39,5 @@ if(RoomAvailable){
         console.log(`${customerName} has been informed that no rooms are available.`);
     }
 
+}
 
-/** 
- * Tanda $ buat memanggil variable customerName, karena variable customerName adalah string,
- * maka harus menggunakan tanda $ untuk memanggilnya.
- * /

@@ -23,3 +23,30 @@
  * - Number of passing students
  * - Number of failing students
  */
+
+const scores = [
+   82, 75, 91, 64, 88, 73, 95, 80, 69, 77, 84, 92, 58, 79, 86, 71, 90, 67, 83, 76
+];
+
+let TotalScore = 0;
+let PassingCount = 0;
+let FailingCount = 0;
+
+for (let i = 0; i < scores.length; i++) {
+    const currentScore = scores[i];
+    TotalScore += currentScore;
+
+    if (currentScore >= 75) {
+        PassingCount++;
+    } else {
+        FailingCount++;
+    }
+}
+
+const AverageScore = TotalScore / scores.length;
+
+console.log("Summarize Examinition");
+console.log(`Total Score                : ${TotalScore}`);
+console.log(`Average Score              : ${AverageScore.toFixed(2)}`);
+console.log(`Number of Passing Students : ${PassingCount}`);
+console.log(`Number of Failing Students : ${FailingCount}`);
