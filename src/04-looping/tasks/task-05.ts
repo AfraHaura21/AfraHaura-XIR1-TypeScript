@@ -18,3 +18,40 @@
  * - Average competition score
  */
 
+
+const scores = [
+    98, 76, 85, 62, 91,
+    73, 88, 59, 100, 81,
+    67, 79, 94, 83, 71,
+    96, 65, 87, 74, 90
+];
+let goldCount = 0;
+let silverCount = 0;
+let bronzeCount = 0;
+let noMedalCount = 0;
+let totalScore = 0;
+
+for (let i = 0; i < scores.length; i++) {
+    const score = scores[i]; // 
+    totalScore += score;
+
+    if (score >= 95) {
+        goldCount++;
+    } else if (score >= 85) {
+        silverCount++;
+    } else if (score >= 75) {
+        bronzeCount++;
+    } else {
+        noMedalCount++;
+    }
+}
+
+const averageScore = totalScore / scores.length;
+
+console.log("Jumlah Pemenang Medali Emas   : " + goldCount);
+console.log("Jumlah Pemenang Medali Perak  : " + silverCount);
+console.log("Jumlah Pemenang Medali Perunggu: " + bronzeCount);
+console.log("Jumlah Peserta Tanpa Medali   : " + noMedalCount);
+console.log("Rata-rata Skor Kompetisi      : " + averageScore);
+
+

@@ -21,3 +21,30 @@ const orders = [
   { id: "ORD005", paid: false, stockAvailable: false },
   { id: "ORD006", paid: true, stockAvailable: true }
 ];
+
+let readyToShipCount = 0;
+let unpaidCount = 0;
+let waitingForStockCount = 0;
+let readyOrderIDs = [];
+
+for (const order of orders) {
+
+  if (order.paid && order.stockAvailable) {
+    readyToShipCount++;
+    readyOrderIDs.push(order.id); 
+  }
+  
+  if (!order.paid) {
+    unpaidCount++;
+  }
+  
+  if (!order.stockAvailable) {
+    waitingForStockCount++;
+  }
+}
+
+console.log(" LAPORAN GUDANG ");
+console.log(`Jumlah order siap kirim: ${readyToShipCount}`);
+console.log(`Jumlah order belum bayar: ${unpaidCount}`);
+console.log(`Jumlah order menunggu stok: ${waitingForStockCount}`);
+console.log(`Daftar ID order siap kirim: ${readyOrderIDs.join(", ")}`);
