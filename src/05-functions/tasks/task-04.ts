@@ -20,3 +20,26 @@ const attendances = [
     { name: "Dimas", present: true },
     { name: "Eka", present: false }
 ];
+function printAttendanceReport(attendancesList: any) {
+  let totalPresent = 0;
+  let totalAbsent = 0;
+  let absentNames = [];
+
+  
+  for (let i = 0; i < attendancesList.length; i++) {
+    let student = attendancesList[i];
+   
+    if (student.present === true) {
+      totalPresent++;
+    } else {
+      totalAbsent++;
+      absentNames.push(student.name); 
+    }
+  }
+  console.log("LAPORAN KEHADIRAN");
+  console.log("Total Hadir: " + totalPresent);
+  console.log("Total Absen: " + totalAbsent);
+  console.log("Nama Siswa Absen: " + absentNames.join(", "));
+}
+
+printAttendanceReport(attendances);
