@@ -23,7 +23,7 @@
  */
 
 
-function PerformanceStatus(score: number):string {
+function PerformanceStatus(score: number) : any{
   if (score > 90) {
     return "Excellent";
   } else if (score > 80) {
@@ -32,7 +32,6 @@ function PerformanceStatus(score: number):string {
     return "Needs Improvement";
   }
 }
-
 
 function showBonusStatus(name: string, score: number): void {
   let performanceStatus: string = PerformanceStatus(score);
@@ -43,7 +42,7 @@ function showBonusStatus(name: string, score: number): void {
     bonus = "Bonus Not Approved";
   }
 
-  console.log(name + " -> " + bonus + " (" + performanceStatus + ")");
+  console.log(`${name}: ${performanceStatus} - ${bonus}`);
 }
 
 showBonusStatus("John Cena", 92);

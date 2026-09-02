@@ -4,7 +4,8 @@
 const scores = [85, 72, 91, 64, 88];
 
 /**
- * The teacher wants to process the scores in different ways.
+ * The teacher wants to process the scores in 
+ * different ways.
  * One report should simply display each score:
  * 
  * Score: 85
@@ -26,21 +27,29 @@ const scores = [85, 72, 91, 64, 88];
  */
 
 function processScores(
-    scores: number[],
-    callback: (score: number) => void
+  scores: number[],
+  callback: (score: number) => void,
 ): void {
-    // implementation
+  // implementation
+  for (let i = 0; i < scores.length; i++) {
+    callback(scores[i]);
+  }
 }
 
 function printScore(score: number) {
-    // implementation
+  // implementation
+  console.log(`Score: ${score}`);
 }
 
 function showGrade(score: number) {
-    // implementation
+  // implementation
+  let grade = `D`;
+  if (score >= 90) grade = `A`;
+  if (score >= 80 && score < 90) grade = `B`;
+  if (score >= 70 && score < 80) grade = `C`;
+  console.log(`Grade for score ${score} is ${grade}`);
 }
 
-
 // implementation of callback function
-processScores(scores, printScore)
-processScores(scores, showGrade)
+processScores(scores, printScore);
+processScores(scores, showGrade);
