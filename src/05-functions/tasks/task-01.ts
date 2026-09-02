@@ -24,3 +24,13 @@
  * 5. Display every student's final grade.
 
  */
+function calculateFinalGrade (Tugas :number , Midtern :number, final :number): number{ //Membuat fungsi dengan menentukan tipe data input harus angka
+    return (Tugas * 0.3) + (Midtern * 0.3) + (final * 0.4); // Menghitung dan mengembalikan (return) nilai akhir
+}
+let nilaiAlya: number = calculateFinalGrade(85 ,80, 92);
+let nilaiBudi: number = calculateFinalGrade(78, 75, 81);
+let nilaiCitra: number = calculateFinalGrade(90, 88, 95);
+
+console.log ("Nilai Akhir Alya = "+ nilaiAlya);
+console.log ("Nilai Akhit Budi = "+ nilaiBudi);
+console.log ("Nilai Akhir Citra = "+ nilaiCitra);

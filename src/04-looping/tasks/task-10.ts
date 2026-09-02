@@ -25,3 +25,46 @@ const submissions = [
     { student: "Gita", submitted: true, score: 90 },
     { student: "Hana", submitted: true, score: 73 }
 ];
+let jumlahMengumpulkan = 0;
+let jumlahTidakMengumpulkan = 0;
+let jumlahLulus = 0;
+let jumlahRemidi = 0;
+let totalNilai = 0;
+
+let namaTidakMengumpulkan = [];
+let namaHarusRemidi = [];
+
+for (let data of submissions) {
+ 
+  totalNilai = totalNilai + data.score;
+
+  if (data.submitted === true) {
+    jumlahMengumpulkan = jumlahMengumpulkan + 1;
+  
+    if (data.score >= 75) {
+      jumlahLulus = jumlahLulus + 1;
+    } else {
+      jumlahRemidi = jumlahRemidi + 1;
+      namaHarusRemidi.push(data.student);
+    }
+
+  } else {
+   
+    jumlahTidakMengumpulkan = jumlahTidakMengumpulkan + 1;
+    namaTidakMengumpulkan.push(data.student); 
+  }
+}
+let rataRata = totalNilai / submissions.length;
+
+console.log("RINGKASAN DATA TUGAS");
+console.log("Jumlah siswa mengumpulkan: " + jumlahMengumpulkan);
+console.log("Jumlah siswa tidak mengumpulkan: " + jumlahTidakMengumpulkan);
+console.log("Jumlah siswa lulus: " + jumlahLulus);
+console.log("Jumlah siswa harus revisi: " + jumlahRemidi);
+
+console.log("DAFTAR NAMA ");
+console.log("Siswa tidak mengumpulkan: " + namaTidakMengumpulkan.join(", "));
+console.log("Siswa revisi: " + namaHarusRemidi.join(", "));
+
+console.log("STATISTIK KELAS");
+console.log("Rata-rata nilai kelas: " + rataRata);

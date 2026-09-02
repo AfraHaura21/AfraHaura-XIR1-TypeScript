@@ -13,8 +13,22 @@
 
 const prices = [
     250000,
-    180000,
+    180000, 
     95000,
     420000,
     125000
 ];
+
+function calculateTotalPrice (daftarharga: number[]): number{
+    let total = 0;
+
+    for( let i = 0; i < daftarharga.length; i++){
+    total = total + daftarharga[i];
+    }
+    return total;
+}
+
+let totalbelanja: number = calculateTotalPrice(prices);
+
+console.log ("Total Harga = Rp. "+ totalbelanja);
+
