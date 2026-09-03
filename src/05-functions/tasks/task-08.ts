@@ -54,3 +54,59 @@ const submissions = [
         score: 96
     }
 ];
+
+function getTotalStudents(submissionsList: typeof submissions) : number {
+  return submissionsList.length;
+}
+
+function getSubmittedCount(submissionsList: typeof submissions) : number {
+  return submissionsList.filter(item => item.submitted === true).length;
+}
+
+function getMissingCount(submissionsList: typeof submissions) : number {
+  return submissionsList.filter(item => item.submitted === false).length;
+}
+
+function getPassedCount(submissionsList: typeof submissions) {
+  return submissionsList.filter(item => item.score >= 75).length;
+}
+
+function getRevisionCount(submissionsList: typeof submissions) {
+  return submissionsList.filter(item => item.submitted && item.score < 75).length;
+}
+
+function getAverageScore(submissionsList: typeof submissions) {
+  if (submissionsList.length === 0) return 0;
+  const totalScore = submissionsList.reduce((sum, item) => sum + item.score, 0);
+  return Number((totalScore / submissionsList.length).toFixed(2));
+}
+
+function getScoreExtremes(submissionsList: typeof submissions) {
+  if (submissionsList.length === 0) return { highest: 0, lowest: 0 };
+  const scores = submissionsList.map(item => item.score);
+  return {
+    highest: Math.max(...scores),
+    lowest: Math.min(...scores)
+  };
+}
+
+function displayPrincipalReport(submissionsList: typeof submissions) {
+  const total = getTotalStudents(submissionsList);
+  const submitted = getSubmittedCount(submissionsList);
+  const missing = getMissingCount(submissionsList);
+  const passed = getPassedCount(submissionsList);
+  const revision = getRevisionCount(submissionsList);
+  const average = getAverageScore(submissionsList);
+  const extremes = getScoreExtremes(submissionsList);
+
+  console.log("Laporan Tugas LMS");
+  console.log(`Total Siswa             : ${total}`);
+  console.log(`Tugas Dikumpulkan      : ${submitted}`);
+  console.log(`Tugas Belum Dikumpul    : ${missing}`);
+  console.log(`Siswa Lulus             : ${passed}`);
+  console.log(`Siswa Perlu Revisi      : ${revision}`);
+  console.log(`Rata-rata Nilai         : ${average}`);
+  console.log(`Nilai Tertinggi         : ${extremes.highest}`); 
+  console.log(`Nilai Terendah          : ${extremes.lowest}`);  
+}
+displayPrincipalReport(submissions);
