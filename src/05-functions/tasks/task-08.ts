@@ -22,6 +22,11 @@
  * - 1 void function to display the report.
  * 
  */
+interface Submission {
+    student: string;
+    submitted: boolean;
+    score: number;
+}
 const submissions = [
     {
         student: "Alya",
@@ -55,33 +60,38 @@ const submissions = [
     }
 ];
 
-function getTotalStudents(submissionsList: typeof submissions) : number {
+function getTotalStudents(submissionsList: Submission[]): number {
   return submissionsList.length;
 }
 
-function getSubmittedCount(submissionsList: typeof submissions) : number {
+function getSubmittedCount(submissionsList: Submission[]): number {
   return submissionsList.filter(item => item.submitted === true).length;
 }
 
-function getMissingCount(submissionsList: typeof submissions) : number {
+function getMissingCount(submissionsList: Submission[]): number {
   return submissionsList.filter(item => item.submitted === false).length;
 }
 
-function getPassedCount(submissionsList: typeof submissions) {
+function getPassedCount(submissionsList: Submission[]): number {
   return submissionsList.filter(item => item.score >= 75).length;
 }
 
-function getRevisionCount(submissionsList: typeof submissions) {
+function getRevisionCount(submissionsList: Submission[]): number {
   return submissionsList.filter(item => item.submitted && item.score < 75).length;
 }
 
-function getAverageScore(submissionsList: typeof submissions) {
+function getAverageScore(submissionsList: Submission[]): number {
   if (submissionsList.length === 0) return 0;
   const totalScore = submissionsList.reduce((sum, item) => sum + item.score, 0);
   return Number((totalScore / submissionsList.length).toFixed(2));
 }
 
-function getScoreExtremes(submissionsList: typeof submissions) {
+interface ScoreExtremes {
+  highest: number;
+  lowest: number;
+}
+
+function getScoreExtremes(submissionsList: Submission[]): ScoreExtremes {
   if (submissionsList.length === 0) return { highest: 0, lowest: 0 };
   const scores = submissionsList.map(item => item.score);
   return {
@@ -90,7 +100,7 @@ function getScoreExtremes(submissionsList: typeof submissions) {
   };
 }
 
-function displayPrincipalReport(submissionsList: typeof submissions) {
+function displayPrincipalReport(submissionsList: Submission[]): void {
   const total = getTotalStudents(submissionsList);
   const submitted = getSubmittedCount(submissionsList);
   const missing = getMissingCount(submissionsList);
@@ -99,7 +109,7 @@ function displayPrincipalReport(submissionsList: typeof submissions) {
   const average = getAverageScore(submissionsList);
   const extremes = getScoreExtremes(submissionsList);
 
-  console.log("Laporan Tugas LMS");
+  console.log("=== Laporan Tugas LMS ===");
   console.log(`Total Siswa             : ${total}`);
   console.log(`Tugas Dikumpulkan      : ${submitted}`);
   console.log(`Tugas Belum Dikumpul    : ${missing}`);
@@ -109,4 +119,5 @@ function displayPrincipalReport(submissionsList: typeof submissions) {
   console.log(`Nilai Tertinggi         : ${extremes.highest}`); 
   console.log(`Nilai Terendah          : ${extremes.lowest}`);  
 }
+
 displayPrincipalReport(submissions);
