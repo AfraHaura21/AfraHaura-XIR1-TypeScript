@@ -22,8 +22,21 @@ function showRegistrationMessage(name: string): void {
 /** show registration message */
 registerStudent(`John Cena`, showRegistrationMessage)
 
+
 /** 
  * TASK:
  * create another function that display welcomming message for entire student!
  * Don't forget to implement callback function.
  * */
+
+function welcomeEntireStudent(callback: () => void): void {
+  console.log("Processing school event...");
+  callback();
+}
+
+function showWelcomingMessage(): void {
+  console.log("Welcome to the new school year to all students!");
+}
+
+/** show welcoming message for entire student */
+welcomeEntireStudent(showWelcomingMessage);
