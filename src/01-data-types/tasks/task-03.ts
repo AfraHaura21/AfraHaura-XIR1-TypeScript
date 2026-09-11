@@ -6,7 +6,6 @@
  * Task:
  * 1. Define a proper type for the student information.
  * 2. Implement a type that you defined on 3 students data.
- *
  * display the student data using console.log.
  */
 

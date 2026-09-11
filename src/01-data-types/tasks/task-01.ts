@@ -24,6 +24,6 @@ const attendanceScore: number = 100;
 const extracurricularParticipation: boolean = true;
 const finalGrade: number = (assignmentScore * 0.3) + (midtermScore * 0.3) + (finalScore * 0.4);
 
-console.log("==Data Nadia==")
+console.log("Data Nadia")
 console.log({studentName, studentID, assignmentScore, midtermScore, finalScore, attendanceScore, extracurricularParticipation, finalGrade});
 

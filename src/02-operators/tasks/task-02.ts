@@ -15,7 +15,7 @@
 
  */
 
-const finalScore:number = 60;
+const finalScore:number = 82;
 const attendance:number = 94;
 const tuitionPaid:boolean = true;
 

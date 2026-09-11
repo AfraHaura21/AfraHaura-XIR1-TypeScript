@@ -14,7 +14,6 @@
  * 4. Declare all variables in TypeScript.
  * 5. Display the product data using console.log.
  */
-
 const productName: string = "Mechanical Keyboard RGB";
 const productCode: string = "KBR-001";
 const originalPrice: number = 850000;
