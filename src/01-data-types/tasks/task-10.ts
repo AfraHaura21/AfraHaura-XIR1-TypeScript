@@ -18,11 +18,11 @@
  */
 
 type Product ={
-    ProductCode: string,
-    ProductName: string,
-    Price: number,
-    Quantity: number,
-    FreeShipping: boolean,
+    ProductCode: string;
+    ProductName: string;
+    Price: number;
+    Quantity: number;
+    FreeShipping: boolean;
 }
 
 const ShoppingCart: Product[]= [

@@ -57,21 +57,21 @@ function prosessData<T>(arr: Transaction[], callback: (item: Transaction) => T):
     return arr.map(callback);
 }
 
-const names = prosessData(transactions, (trx) => trx.customer);
+const names = prosessData(transactions, (trs) => trs.customer);
 
-const results = prosessData(transactions, (trx) => {
+const results = prosessData(transactions, (trs) => {
     let category = "LOW VALUE";
-    if (trx.amount >= 2000000) category = "HIGH VALUE";
-    else if (trx.amount >= 1000000) category = "MEDIUM VALUE";
+    if (trs.amount >= 2000000) category = "HIGH VALUE";
+    else if (trs.amount >= 1000000) category = "MEDIUM VALUE";
 
     let rate = 0;
-    if (trx.status === "paid") rate = 0.02;
-    else if (trx.status === "pending") rate = 0.01;
+    if (trs.status === "paid") rate = 0.02;
+    else if (trs.status === "pending") rate = 0.01;
 
     return {
-    ...trx,
+    ...trs,
     category: category,
-    platformFee: trx.amount * rate
+    platformFee: trs.amount * rate
     };
 
 })

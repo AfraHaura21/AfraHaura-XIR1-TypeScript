@@ -34,13 +34,13 @@
  * - Display whether the student is accepted.
  */
 
-const StudentName = "Alya";
-const GPA = 3.89;
-const FamilyIncome = 4200000;
-const CompetitionCount = 4;
-const HasDisciplinaryRecord = false;
-const DocumentComplate = true ;
-const totalBudget = 50000000;
+const StudentName: string = "Alya";
+const GPA: number = 3.89;
+const FamilyIncome: number = 4200000;
+const CompetitionCount: number = 4;
+const HasDisciplinaryRecord: boolean = false;
+const DocumentComplate: boolean = true ;
+const totalBudget: number = 50000000;
 
 const GPArequit =  GPA >= 3.75;
 const IncomeRequit = FamilyIncome <= 5000000;

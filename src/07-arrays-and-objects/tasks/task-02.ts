@@ -45,3 +45,23 @@ const products = [
         stock: 3,
     },
 ];
+// Available Products
+const availableProduct = products.filter(product => product.stock > 0);
+
+// Products Name
+const productNames = products.map(product => product.name);
+
+// Calculate Products
+const totalValue = products.reduce(
+    (total, product) => total + (product.price * product.stock), 0
+);
+
+//  Sort available products from most expensive → cheapest
+const sortedProducts = [...availableProduct].sort(
+    (a, b) => b.price - a.price
+);
+
+console.log("Available Products : ", availableProduct);
+console.log("Product Names : ", productNames);
+console.log("Total Value : ", totalValue);
+console.log("Sorted Products : ", sortedProducts);

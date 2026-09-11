@@ -27,3 +27,36 @@
  * that displays the student's information.
  * Then create at least three student objects.
  */
+
+class Student {
+    studentID: string;
+    name: string;
+    age: number;
+    major: string;
+    grade: number;
+   constructor(studentID: string,name: string, age: number,major: string,grade: number) {
+    this.studentID = studentID;
+    this.name = name;   
+    this.age = age;
+    this.major = major;
+    this.grade = grade; 
+   }
+
+   showProfile(): void {
+    console.log (" ");
+    console.log ("Profil Siswa " + this.name);
+    console.log ("Student ID = " + this.studentID);
+    console.log ("Name = " + this.name);
+    console.log ("Age = " + this.age);
+    console.log ("Major = " + this.major);
+    console.log ("Grade = " + this.grade);
+   }
+} 
+
+const student1 = new Student ("ST001","Lionel Messi",17,"Software Engineering",11);
+const student2 = new Student ("ST002","Afra Hau",16,"Software Engineering",11);
+const student3 = new Student ("ST033","Raisa",16,"Teknik Komputer Jaringan",11);
+
+student1.showProfile();
+student2.showProfile();
+student3.showProfile();
